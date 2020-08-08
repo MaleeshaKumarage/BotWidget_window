@@ -31,11 +31,11 @@ export class App extends Component {
          
             <div id="slider">
                 <figure>
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867405/RestOBot/ps0fxy14tdioqp6svk28.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867405/RestOBot/ugzk2zojwt8ia05xywyw.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867404/RestOBot/vnyusgbxru12gnjikugw.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867404/RestOBot/l6ptpx6xvmscfwsaz3qb.png" />
-                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867403/RestOBot/ztasczqnucncmg8zg4ib.png" />
+                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867405/RestOBot/ps0fxy14tdioqp6svk28.png" alt="1"/>
+                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867405/RestOBot/ugzk2zojwt8ia05xywyw.png" alt="2"/>
+                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867404/RestOBot/vnyusgbxru12gnjikugw.png" alt="3" />
+                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867404/RestOBot/l6ptpx6xvmscfwsaz3qb.png" alt="4"/>
+                  <img src="https://res.cloudinary.com/vevro/image/upload/v1594867403/RestOBot/ztasczqnucncmg8zg4ib.png" alt="5"/>
                   
                 </figure>
             </div>
@@ -59,12 +59,12 @@ export class App extends Component {
   componentDidMount() {
     window.addEventListener('resize', () => {
         this.setState({
-            isMobile: window.innerWidth < 1200
+            isMobile: window.innerWidth < 760
         });
     }, false);
     window.addEventListener('load', () => {
       this.setState({
-          isMobile: window.innerWidth < 1200
+          isMobile: window.innerWidth < 760
       });
   }, false);
 }
