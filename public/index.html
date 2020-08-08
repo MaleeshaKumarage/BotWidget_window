@@ -76,7 +76,7 @@
 -->
   <div id="root" onkeyup="startText()" style="height: 100%;" class="container-fluid"></div>
  
-  <!--
+  <!--onkeyup="startText()"
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -99,6 +99,10 @@ element.addEventListener("keydown", function(event) {
     }
     
 });
+if(screen.width<500){
+  document.getElementById("userOutput").style.display="none";
+}
+
 }
 </script>
 
