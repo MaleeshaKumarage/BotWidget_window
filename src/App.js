@@ -57,11 +57,11 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => {
-        this.setState({
-            isMobile: window.innerWidth < 760
-        });
-    }, false);
+    // window.addEventListener('resize', () => {
+    //     this.setState({
+    //         isMobile: window.innerWidth < 760
+    //     });
+    // }, false);
     window.addEventListener('load', () => {
       this.setState({
           isMobile: window.innerWidth < 760
