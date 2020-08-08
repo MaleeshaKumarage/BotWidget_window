@@ -62,10 +62,10 @@ export class App extends Component {
     //         isMobile: window.innerWidth < 760
     //     });
     // }, false);
-    window.addEventListener('load', () => {
-      this.setState({
-          isMobile: window.innerWidth < 760
-      });
-  }, false);
+  //   window.addEventListener('load', () => {
+  //     this.setState({
+  //         isMobile: window.innerWidth < 760
+  //     });
+  // }, false);
 }
 }
