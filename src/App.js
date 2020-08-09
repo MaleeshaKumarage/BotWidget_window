@@ -14,7 +14,7 @@ export class App extends Component {
   }
 
   render() {
-    const mobileChanged = window.innerWidth<700? 'col-12' : 'col-8';
+    const mobileChanged = window.innerWidth>700? 'col-12' : 'col-8';
     return (
       // <Layout>
       //   <Route exact path='/' component={Home} />
