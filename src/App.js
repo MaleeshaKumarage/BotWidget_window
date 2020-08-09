@@ -10,11 +10,11 @@ export class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { isMobile: false };
+    this.state = { isMobile: window.innerWidth<700? 'true' : 'false' };
   }
 
   render() {
-    const mobileChanged = window.innerWidth>700? 'col-12' : 'col-8';
+    const mobileChanged = this.state.isMobile?'col-08' : 'col-12';
     return (
       // <Layout>
       //   <Route exact path='/' component={Home} />
