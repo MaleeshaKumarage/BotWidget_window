@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { WebChat } from './components/WebChat';
+import './app.css';
 
 
 // import './custom.css'
@@ -13,7 +14,7 @@ export class App extends Component {
   }
 
   render() {
-    const mobileChanged = this.state.isMobile ? 'col-12' : 'col-8';
+    const mobileChanged = window.innerWidth<700? 'col-12' : 'col-8';
     return (
       // <Layout>
       //   <Route exact path='/' component={Home} />
@@ -43,13 +44,33 @@ export class App extends Component {
               <span className="lovespan ">Made with <i className="fa fa-heart pulse"></i> by <span onClick={this.onClickVevro} id="lvevro"
                 style={{ cursor: "pointer" }}>Maleesha Kumarage<sup>&copy;</sup></span></span>
               <br />
-             
+              <div class="row">
+              <div class="col-sm-4" >
+              Smart Suggetions
+              </div>
+              <div class="col-sm-4">
+                <label class="switch">
+                  <input type="checkbox" id="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div class="col-sm-4" >
+                Singlish
+              </div>
             </div>
+          
+           
             </div>
+
+            
+            
+        
+          </div>
           </div>
         <div className={mobileChanged} style={{ maxHeight: "100%"}} >
           <WebChat />
-          <input id="userOutput" style={{ maxHeight: "100%",width:"100%",border:"none" }}readonly></input>
+          <input id="userOutput" style={{ background:"transparent",maxHeight: "100%",width:"100%",border:"none" }}disabled></input>
+             
         </div>
        
       </div>

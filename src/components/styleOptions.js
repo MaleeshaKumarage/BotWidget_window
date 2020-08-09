@@ -64,7 +64,7 @@ const STYLE_OPTIONS = {
   //richCardWrapTitle: false, // Applies to subtitles as well
 
   // Root
-  //rootHeight: '100%',
+  rootHeight: (window.innerHeight*0.8),
   //rootWidth: '100%',
 
   // Scroll to end button

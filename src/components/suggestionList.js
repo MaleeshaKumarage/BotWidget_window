@@ -47,7 +47,7 @@ class SuggestionList extends Component {
     var response = await axios.get("https://inputtools.google.com/request?text="+res[res.length-1]+"&itc=si-t-i0-und&num=5")
     try {
     var val=response.data[1][0][1];
-        
+    console.log(val);
    } catch (error) {
        console.log(error);
    }

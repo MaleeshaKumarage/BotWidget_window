@@ -29,7 +29,7 @@ export class WebChat extends Component {
                 return next(action);
             }
         });
-        this.state = { dtoken: null, uid: null, uname: null, isSet: false };
+        this.state = { dtoken: null, uid: null, uname: null, isSet: false,checked:false };
     }
     
     async componentInit() {
@@ -75,48 +75,51 @@ export class WebChat extends Component {
     
     async componentDidMount() {
         await this.componentInit();
-        console.log(window.innerWidth);
+       
        
         
         document.addEventListener("keyup", this.escFunction, false);
-        
+     document.getElementById("checkbox").addEventListener("change",()=>{
+        console.log(document.getElementById("checkbox").checked);
+        this.setState({
+            checked: document.getElementById("checkbox").checked,           
+        });
+     },false);
     }
 
    
     render() {
-        if(window.innerWidth>1200){
-            document.getElementById("userOutput").style.display="none";
-            return (
-                <div id="bot" className="col">
-                    
-                    {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
-                    <SuggestionList/>               
-                </div>
-               
-            );
-        }else if(window.innerWidth>700){
-            
-            return (
-               
-                <div id="bot" className="col">
-                    
-                    {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
-                   
-                   
-                </div>
-               
-            );
-        }else{
-     
-            return (
-                <div id="bot" className="col">
-                    
-                    {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
-                           
-                </div>
-               
-            );
-        }
        
+       
+        let webchatnew;
+        if (this.state.checked) {
+            console.log(this.state.checked +"aaaaaaaaaaaaaaa");
+           
+            webchatnew = <div id="bot" className="col">
+                    
+                            {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
+                           
+                        </div>;
+          } else {
+            var ele=document.getElementById("userOutput")
+            console.log(this.state.checked +"bbbbbbbbb");
+          if(ele===null){
+            console.log("null");
+          }else{
+            console.log("NOT null");
+            ele.style.display="none"
+          }
+            webchatnew = <div id="bot" className="col">
+                    
+                            {this.state.isSet && <ReactWebChat directLine={createDirectLine({ token: this.state.dtoken, webSocket: true })} userID={this.state.uid} username={this.state.uname} styleOptions={STYLE_OPTIONS} store={this.store} />}
+                            <SuggestionList />
+                        </div>;
+          }
+       
+          return (
+            <div>
+                 {webchatnew}
+            </div>
+          );
     }
 }
