@@ -93,6 +93,14 @@ export class WebChat extends Component {
        
         let webchatnew;
         if (this.state.checked) {
+            var ele=document.getElementById("userOutput")
+            if(ele===null){
+                console.log("null");
+               
+              }else{
+                console.log("NOT null");
+                ele.style.display="block";
+              }
             console.log(this.state.checked +"aaaaaaaaaaaaaaa");
            
             webchatnew = <div id="bot" className="col">
@@ -105,9 +113,10 @@ export class WebChat extends Component {
             console.log(this.state.checked +"bbbbbbbbb");
           if(ele===null){
             console.log("null");
+           
           }else{
             console.log("NOT null");
-            ele.style.display="none"
+            ele.style.display="none";
           }
             webchatnew = <div id="bot" className="col">
                     

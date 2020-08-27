@@ -22,10 +22,8 @@ export class App extends Component {
       //   <Route path='/fetch-data' component={FetchData} />
       // </Layout>
 
-      <div className="row" style={{ height: "90%" }}>
-        <div style={{ width: "100%" }}>
-          
-        </div>
+      <div className="row" style={{ height: "90%",width:"100%" }}>
+       
         <div className="col-4 portraitHide " style={{ maxHeight: "100%" }}  >
        
           <div className="row " style={{ maxHeight: "100%" }}>
@@ -67,7 +65,7 @@ export class App extends Component {
         
           </div>
           </div>
-        <div className={mobileChanged} style={{ maxHeight: "100%"}} >
+        <div className={'col-08'} style={{ maxHeight: "100%"}} >
           <WebChat />
           <input id="userOutput" style={{ background:"transparent",maxHeight: "100%",width:"100%",border:"none" }}disabled></input>
              
